@@ -19,4 +19,4 @@ RUN (wget -q http://apache.mirror.iweb.ca/hive/hive-${VERSION_HADOOP}/apache-hiv
 
 RUN mkdir /tmp/hive && chmod 733 /tmp/hive
 
-ENTRYPOINT [ "bash", "-cx", "$HIVE_HOME/bin/schematool -dbType postgres -initSchema -ifNotExists && $HIVE_HOME/bin/hiveserver2" ]
+ENTRYPOINT [ "$HIVE_HOME/bin/hiveserver2" ]
